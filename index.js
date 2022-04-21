@@ -6,27 +6,27 @@ inquirer
   .prompt([
     {
       type: 'input',
-      message: 'What do you want the title to be?',
+      message: 'Title of project:',
       name: 'title',
     },
     {
         type: 'input',
-        message: 'What is your github username?',
+        message: 'Github username:',
         name: 'githubusername',
     },
     {
         type: 'input',
-        message: 'What is your email?',
+        message: 'Your email:',
         name: 'email',
     },
     {
       type: 'input',
-      message: 'What do you want the description to be?',
+      message: 'Description of the project:',
       name: 'description',
     },
     {
         type: 'input',
-        message: 'What are the installation instructions?',
+        message: 'Neccessary depenency commands:',
         name: 'instructions',
     },
     {
@@ -36,17 +36,17 @@ inquirer
     },
     {
         type: 'input',
-        message: 'What are the contribution guidelines?',
+        message: 'Contribution guidelines:',
         name: 'contributingInfo',
     },
       {
         type: 'input',
-        message: 'What command should be used to run tests?',
+        message: 'Which command should be used to run tests?',
         name: 'testcommand',
       },
       {
         type: 'list',
-        message: 'What license do you want to put on this project?',
+        message: 'Which license do you want to put on this project?',
         choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3'],
         name: 'license',
       },
@@ -71,14 +71,14 @@ inquirer
           badge = '[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)'
       }
       console.log(license)
-    fs.writeFile('README.md', `# ${response.title}
+    fs.writeFile('README2.md', `# ${title}
 
 ${badge}
 
 
 ## Description
     
-${response.description}
+${description}
     
 ## Table Of Contents
 
@@ -104,7 +104,7 @@ ${instructions}
 
 
 ## Usage
-${response.usage}
+${usage}
 
 
 ## License
@@ -123,8 +123,8 @@ ${testcommand}
 
 
 ## Questions
-If you have any questions please reach out to me via email ${response.email} 
-check out some of my other work - https://github.com/${response.githubusername}/`, (error) => 
+If you have any questions please reach out to me via email ${email} 
+Check out some of my other work - https://github.com/${githubusername}/`, (error) => 
 {
  if (error)
     console.error(error)

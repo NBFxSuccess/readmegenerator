@@ -1,11 +1,11 @@
-# ReadMe Generator
+# Pro ReadMe Generator
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
 ## Description
     
-ReadMe Generator using inquirer.
+README.md Generator written in javascript using inquirer.
     
 ## Table Of Contents
 
