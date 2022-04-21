@@ -9,63 +9,103 @@ inquirer
       name: 'title',
     },
     {
+        type: 'input',
+        message: 'What is your github username?',
+        name: 'githubusername',
+    },
+    {
+        type: 'input',
+        message: 'What is your email?',
+        name: 'email',
+    },
+    {
       type: 'input',
       message: 'What do you want the description to be?',
       name: 'description',
     },
     {
         type: 'input',
-        message: 'What do you want the additional section to be named?',
-        name: 'section2',
-      },
-      {
-        type: 'input',
-        message: 'What do you want the content of the additional section to be?',
-        name: 'section2content',
-      },
-      {
-        type: 'input',
-        message: 'What is the link to the deployed application? ',
-        name: 'link',
-      },
+        message: 'What are the installation instructions?',
+        name: 'instructions',
+    },
     {
         type: 'input',
-        message: 'What is the name of the screenshot?',
-        name: 'screenshotname',
+        message: 'What are the usage instructions?',
+        name: 'usage',
+    },
+    {
+        type: 'input',
+        message: 'What are the contribution guidelines?',
+        name: 'contributingInfo',
+    },
+    {
+        type: 'input',
+        message: 'What is the link to the test video?',
+        name: 'link',
       },
       {
         type: 'input',
-        message: 'Link to the screenshot',
-        name: 'screenshotlink',
+        message: 'What command should be used to run tests?',
+        name: 'testcommand',
       },
+      {
+        type: 'list',
+        message: 'What license do you want to put on this project?',
+        choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3'],
+        name: 'license',
+      },
+      
   ])
-
   .then((response) =>
   {
+      console.log(response.license)
     fs.writeFile('README.md', `# ${response.title}
 
 ## Description
     
 ${response.description}
     
-## ${response.section2}
     
-${response.section2content}
-    
-    
-## Deployed Application
-    
-${response.link}
-    
-    
-## Screenshot
-    
-![${response.screenshotname}](${response.screenshotlink})
-    
-    
+## Table Of Contents
+
+* [Installation](#installation)
+
+* [Usage](#usage)
+
+* [License](#license)
+
+* [Contributing](#contributing)
+
+* [Tests](#tests)
+
+* [Questions](#questions)
+
+
+## Installation
+To install dependencies please use the following command:
+\`\`\`${response.instructions}\`\`\`
+
+
+## Usage
+${response.usage}
+
+
 ## License
-    
-()`, (error) => 
+${response.license}
+
+## Contribution guidelines
+${response.contributingInfo}
+
+
+## Test
+To run tests run the following command:
+
+\`\`\`${response.testcommand}\`\`\`
+
+
+## Questions
+If you have any questions please reach out to me via email ${response.email} 
+check out some of my other work - ${response.githubusername}`, (error) => 
 {
  if (error)
     console.error(error)
