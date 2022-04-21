@@ -1,9 +1,11 @@
-# a
+# ReadMe Generator
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 
 ## Description
     
-a
-    
+ReadMe Generator using inquirer.
     
 ## Table Of Contents
 
@@ -13,7 +15,7 @@ a
 
 * [License](#license)
 
-* [Contributing](#contributing)
+* [Contribution Guidelines](#contribution)
 
 * [Tests](#tests)
 
@@ -21,28 +23,32 @@ a
 
 
 ## Installation
-To install dependencies please use the following command:
+To install neccessary dependencies please use the following command:
 
-a
+```
+npm i
+```
 
 
 ## Usage
-a
+VIDEO LINK HERE
 
 
 ## License
+MIT
+
+## Contribution
+Do not contribute.
 
 
-## Contribution guidelines
-a
-
-
-## Test
+## Tests
 To run tests run the following command:
 
-```a```
+```
+node index.js
+```
 
 
 ## Questions
-If you have any questions please reach out to me via email a 
-check out some of my other work - a
+If you have any questions please reach out to me via email professionalnicky@gmail.com 
+check out some of my other work - https://github.com/NBFxSuccess/

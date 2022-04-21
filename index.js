@@ -1,5 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+let badge;
 
 inquirer
   .prompt([
@@ -38,11 +39,6 @@ inquirer
         message: 'What are the contribution guidelines?',
         name: 'contributingInfo',
     },
-    {
-        type: 'input',
-        message: 'What is the link to the test video?',
-        name: 'link',
-      },
       {
         type: 'input',
         message: 'What command should be used to run tests?',
@@ -58,13 +54,30 @@ inquirer
   ])
   .then((response) =>
   {
+      if (response.license === 'MIT') {
+          badge = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
+      }
+    if (response.license === 'APACHE 2.0')
+      {
+          badge = '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)'
+      }
+      if (response.license === 'GPL 3.0')
+      {
+          badge = '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)'
+      }
+      if (response.license === 'BSD 3')
+      {
+          badge = '[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)'
+      }
       console.log(response.license)
     fs.writeFile('README.md', `# ${response.title}
+
+${badge}
+
 
 ## Description
     
 ${response.description}
-    
     
 ## Table Of Contents
 
@@ -74,7 +87,7 @@ ${response.description}
 
 * [License](#license)
 
-* [Contributing](#contributing)
+* [Contribution Guidelines](#contribution)
 
 * [Tests](#tests)
 
@@ -82,8 +95,11 @@ ${response.description}
 
 
 ## Installation
-To install dependencies please use the following command:
-\`\`\`${response.instructions}\`\`\`
+To install neccessary dependencies please use the following command:
+
+\`\`\`
+${response.instructions}
+\`\`\`
 
 
 ## Usage
@@ -93,19 +109,21 @@ ${response.usage}
 ## License
 ${response.license}
 
-## Contribution guidelines
+## Contribution
 ${response.contributingInfo}
 
 
-## Test
+## Tests
 To run tests run the following command:
 
-\`\`\`${response.testcommand}\`\`\`
+\`\`\`
+${response.testcommand}
+\`\`\`
 
 
 ## Questions
 If you have any questions please reach out to me via email ${response.email} 
-check out some of my other work - ${response.githubusername}`, (error) => 
+check out some of my other work - https://github.com/${response.githubusername}/`, (error) => 
 {
  if (error)
     console.error(error)
