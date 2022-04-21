@@ -54,22 +54,23 @@ inquirer
   ])
   .then((response) =>
   {
-      if (response.license === 'MIT') {
+      const {title, githubusername, email, description, instructions, usage, contributingInfo, testcommand, license} = response;
+      if (license === 'MIT') {
           badge = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
       }
-    if (response.license === 'APACHE 2.0')
+    if (license === 'APACHE 2.0')
       {
           badge = '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)'
       }
-      if (response.license === 'GPL 3.0')
+      if (license === 'GPL 3.0')
       {
           badge = '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)'
       }
-      if (response.license === 'BSD 3')
+      if (license === 'BSD 3')
       {
           badge = '[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)'
       }
-      console.log(response.license)
+      console.log(license)
     fs.writeFile('README.md', `# ${response.title}
 
 ${badge}
@@ -98,7 +99,7 @@ ${response.description}
 To install neccessary dependencies please use the following command:
 
 \`\`\`
-${response.instructions}
+${instructions}
 \`\`\`
 
 
@@ -107,17 +108,17 @@ ${response.usage}
 
 
 ## License
-${response.license}
+${license}
 
 ## Contribution
-${response.contributingInfo}
+${contributingInfo}
 
 
 ## Tests
 To run tests run the following command:
 
 \`\`\`
-${response.testcommand}
+${testcommand}
 \`\`\`
 
 

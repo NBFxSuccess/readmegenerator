@@ -31,7 +31,8 @@ npm i
 
 
 ## Usage
-VIDEO LINK HERE
+https://user-images.githubusercontent.com/98627133/164364254-67b9e262-06c2-4cd0-ad45-26ae81649fee.mov
+
 
 
 ## License
@@ -50,5 +51,5 @@ node index.js
 
 
 ## Questions
-If you have any questions please reach out to me via email professionalnicky@gmail.com 
+If you have any questions please reach out to me via email nick@getmighty.net 
 check out some of my other work - https://github.com/NBFxSuccess/
