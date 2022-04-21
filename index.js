@@ -44,28 +44,28 @@ inquirer
   {
     fs.writeFile('README.md', `# ${response.title}
 
-    ## Description
+## Description
     
-    ${response.description}
+${response.description}
     
-    ## ${response.section2}
+## ${response.section2}
     
-        ${response.section2content}
-    
-    
-    ## Deployed Application
-    
-    ${response.link}
+${response.section2content}
     
     
-    ## Screenshot
+## Deployed Application
     
-    ![${response.screenshotname}](${response.screenshotlink})
+${response.link}
     
     
-    ## License
+## Screenshot
     
-    ()`, (error) => 
+![${response.screenshotname}](${response.screenshotlink})
+    
+    
+## License
+    
+()`, (error) => 
 {
  if (error)
     console.error(error)
